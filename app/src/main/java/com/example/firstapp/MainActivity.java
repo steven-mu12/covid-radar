@@ -9,8 +9,18 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.view.ViewGroup.LayoutParams;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Date;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 public class MainActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
@@ -18,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LinearLayout ll = (LinearLayout) findViewById(R.id.log_scroll);
 
         setContentView(R.layout.activity_main);
 
@@ -41,6 +50,58 @@ public class MainActivity extends AppCompatActivity {
         ((LinearLayout) linearLayout).addView(valueTV);
 
     }
+
+
+    public void save() {
+        String text = "YAS";
+        String FILE_NAME = "example.txt";
+
+        FileOutputStream fos = null;
+
+        try {
+            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+            fos.write(text.getBytes());
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fos != null) {
+                try {
+                    fos.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    public void load(View v) {
+        FileInputStream fis = null;
+        String FILE_NAME = "example.txt";
+        try {
+            fis = openFileInput(FILE_NAME);
+            InputStreamReader isr = new InputStreamReader(fis);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+            while ((text = br.readLine()) != null) {
+                sb.append(text).append("\n");
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (fis != null) {
+                try {
+                    fis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
 //
 //
 //
@@ -79,10 +140,6 @@ public class MainActivity extends AppCompatActivity {
 //        ll.addView(tv1);
 
 
-
-
-
-
 //        for (int i = 0; i < 5; i++) {
 //            System.out.println(i);
 //        }
@@ -117,4 +174,5 @@ public class MainActivity extends AppCompatActivity {
 //
 //
 //    }
+    }
 }
