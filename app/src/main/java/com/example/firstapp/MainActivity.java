@@ -29,19 +29,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("one", "one");
-//        Button buttontest = findViewById(R.id.tester_button);
+
+        //        Button buttontest = findViewById(R.id.tester_button);
 //        buttontest.setOnClickListener(new View.OnClickListener() {
 //            public void onClick(View view){
 //
 //            }
 //        });
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.home_screen);
 
-        for (int i = 0; i<100; i++) {
-            this.add_log("YEEEES  " + i);
-        }
+
 
     }
 
@@ -83,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+        Log.d("READ","I HAVE SAVED THE FILE");
+
+        View linearLayout =  findViewById(R.id.log_scroll);
+        this.load(linearLayout);
     }
     public void load(View v) {
         FileInputStream fis = null;
@@ -95,7 +97,8 @@ public class MainActivity extends AppCompatActivity {
             String text;
             while ((text = br.readLine()) != null) {
                 sb.append(text).append("\n");
-            }
+            };
+            Log.d("READ:", sb.toString());
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
