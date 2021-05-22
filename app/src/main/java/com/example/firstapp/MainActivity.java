@@ -1,22 +1,13 @@
 
 //Lots of imports
-
-
 package com.example.firstapp;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
-import android.content.ActivityNotFoundException;
 import android.view.View;
 import android.os.Bundle;
-
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.content.Intent;
-
+import android.view.ViewGroup.LayoutParams;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,25 +17,65 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        LinearLayout ll = (LinearLayout) findViewById(R.id.log_scroll);
 
         setContentView(R.layout.activity_main);
 
-        LinearLayout ll = (LinearLayout) findViewById(R.id.log_scroll);
-        TextView tv1 = new TextView(this);
-        tv1.setText("This is tv1");
+        for (int i = 0; i<100; i++) {
+            this.add_log("YEEEES  " + i);
+        }
 
-        ll.addView(tv1);
     }
 
     @SuppressLint("SetTextI18n")
-    public void change_box(View given_view){
-        setContentView(R.layout.activity_main);
+    public void add_log(String text){
+        View linearLayout =  findViewById(R.id.log_scroll);
+        //LinearLayout layout = (LinearLayout) findViewById(R.id.info);
 
-        LinearLayout ll = (LinearLayout) findViewById(R.id.log_scroll);
-        TextView tv1 = new TextView(this);
-        tv1.setText("This is tv1");
+        TextView valueTV = new TextView(this);
+        valueTV.setText(text);
 
-        ll.addView(tv1);
+        valueTV.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT));
+
+        ((LinearLayout) linearLayout).addView(valueTV);
+
+    }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//    public void change_box(View given_view){
+//        setContentView(R.layout.activity_main);
+//
+//        LinearLayout ll = (LinearLayout) findViewById(R.id.log_scroll);
+//        TextView tv1 = new TextView(this);
+//        tv1.setText("This is tv1");
+//
+//        ll.addView(tv1);
 
 
 
@@ -73,16 +104,16 @@ public class MainActivity extends AppCompatActivity {
 //        catch (ActivityNotFoundException e) {
 //            button.setText("There seems to be a problem with the picture taking function.");
 //        }
-
-
-
-
-
-
-
-
-
-
-
-    }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//    }
 }
