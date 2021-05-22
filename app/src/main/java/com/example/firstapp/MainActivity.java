@@ -32,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_main);
+        String now = this.load();
+        String sdf[]= now.split("\n", 200);
+
+        for (int i=0; i<sdf.length; i++){
+            add_log(sdf[i]);
+        }
+
+
+
 
 
     }
@@ -52,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void save(View v) {
-        String text = "YAS";
+        String text = "YAS\n";
         String FILE_NAME = "example.txt";
 
         FileOutputStream fos = null;
