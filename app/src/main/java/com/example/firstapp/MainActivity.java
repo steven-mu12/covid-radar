@@ -4,6 +4,7 @@
 package com.example.firstapp;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
+import android.app.ApplicationErrorReport;
 import android.util.Log;
 import android.view.View;
 import android.os.Bundle;
@@ -61,13 +62,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void save(View v) {
-        String text = "YAS\n";
+        String distance = "6 feet";
+        String datern = new Date().toString();
+
+
+        String text = distance + " " + datern + "\n";
         String FILE_NAME = "example.txt";
 
         FileOutputStream fos = null;
 
         try {
-            fos = openFileOutput(FILE_NAME, MODE_APPEND);
+            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
             fos.write(text.getBytes());
 
         } catch (FileNotFoundException e) {
