@@ -3,5 +3,10 @@
     <string name="message">asd!</string>
     <string name="take_a_picture">Take a picture</string>
     <string name="a">a</string>
+    <string-array name="range">
+        <item>4 Meters</item>
+        <item>3 Meters</item>
+        <item>2 Meters</item>
 
+    </string-array>
 </resources>
