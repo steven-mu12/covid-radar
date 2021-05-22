@@ -4,10 +4,12 @@
 package com.example.firstapp;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
+import android.util.Log;
 import android.view.View;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.LinearLayout;
+import android.widget.Button;
 import android.view.ViewGroup.LayoutParams;
 
 import java.io.FileNotFoundException;
@@ -27,7 +29,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        Log.d("one", "one");
+        Button buttontest = findViewById(R.id.tester_button);
+        buttontest.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view){
+
+            }
+        });
 
         setContentView(R.layout.activity_main);
 
@@ -52,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void save() {
+    public void save(View v) {
         String text = "YAS";
         String FILE_NAME = "example.txt";
 
