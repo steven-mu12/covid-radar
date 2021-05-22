@@ -63,12 +63,12 @@
         android:text="CovidRadar®"
         android:textSize="30sp"
         tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="16dp"
+        tools:layout_editor_absoluteY="16dp"/>
 
-    <font
-        android:font="@font/lobster_regular"
-        android:fontStyle="normal"
-        android:fontWeight="400" />
+<!--    <font-->
+<!--        android:font="@font/lobster_regular"-->
+<!--        android:fontStyle="normal"-->
+<!--        android:fontWeight="400" />-->
 
     <EditText
         android:id="@+id/editTextTextPersonName"

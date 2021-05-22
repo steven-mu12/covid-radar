@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("one", "one");
-        Button buttontest = findViewById(R.id.tester_button);
-        buttontest.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view){
-
-            }
-        });
+//        Button buttontest = findViewById(R.id.tester_button);
+//        buttontest.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View view){
+//
+//            }
+//        });
 
         setContentView(R.layout.activity_main);
 
