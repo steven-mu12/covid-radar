@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">First App</string>
+    <string name="message">asd!</string>
+    <string name="take_a_picture">Take a picture</string>
+    <string name="a">a</string>
+
+</resources>
