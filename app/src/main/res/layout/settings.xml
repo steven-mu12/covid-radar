@@ -66,4 +66,28 @@
         android:text="Sound File:"
         tools:layout_editor_absoluteX="33dp"
         tools:layout_editor_absoluteY="340dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selected Sound File:"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="389dp" />
+
+    <TextView
+        android:id="@+id/SoundFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text='""'
+        tools:layout_editor_absoluteX="258dp"
+        tools:layout_editor_absoluteY="389dp" />
+
+    <Button
+        android:id="@+id/upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload"
+        tools:layout_editor_absoluteX="258dp"
+        tools:layout_editor_absoluteY="326dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
