@@ -30,28 +30,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //        Button buttontest = findViewById(R.id.tester_button);
-//        buttontest.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View view){
-//
-//            }
-//        });
 
-        setContentView(R.layout.home_screen);
-
+        setContentView(R.layout.activity_main);
 
 
     }
 
     @SuppressLint("SetTextI18n")
-    public void add_log(String text){
-        View linearLayout =  findViewById(R.id.log_scroll);
+    public void add_log(String text) {
+        View linearLayout = findViewById(R.id.log_scroll);
         //LinearLayout layout = (LinearLayout) findViewById(R.id.info);
 
         TextView valueTV = new TextView(this);
         valueTV.setText(text);
 
-        valueTV.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT));
+        valueTV.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 
         ((LinearLayout) linearLayout).addView(valueTV);
 
@@ -65,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         FileOutputStream fos = null;
 
         try {
-            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+            fos = openFileOutput(FILE_NAME, MODE_APPEND);
             fos.write(text.getBytes());
 
         } catch (FileNotFoundException e) {
@@ -81,12 +74,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        Log.d("READ","I HAVE SAVED THE FILE");
+        Log.d("READ", "I HAVE SAVED THE FILE");
 
-        View linearLayout =  findViewById(R.id.log_scroll);
-        this.load(linearLayout);
+        View linearLayout = findViewById(R.id.log_scroll);
+//        this.load();
     }
-    public void load(View v) {
+
+    public String load() {
         FileInputStream fis = null;
         String FILE_NAME = "example.txt";
         try {
@@ -98,7 +92,9 @@ public class MainActivity extends AppCompatActivity {
             while ((text = br.readLine()) != null) {
                 sb.append(text).append("\n");
             };
+
             Log.d("READ:", sb.toString());
+            return sb.toString();
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -113,77 +109,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//    public void change_box(View given_view){
-//        setContentView(R.layout.activity_main);
-//
-//        LinearLayout ll = (LinearLayout) findViewById(R.id.log_scroll);
-//        TextView tv1 = new TextView(this);
-//        tv1.setText("This is tv1");
-//
-//        ll.addView(tv1);
-
-
-//        for (int i = 0; i < 5; i++) {
-//            System.out.println(i);
-//        }
-//        EditText name_given = findViewById(R.id.person_name);
-//        String name_text = name_given.getText().toString();
-//
-//        TextView button = findViewById(R.id.button);
-//
-        Date datern = new Date();
-//        String display = datern.toString();
-//
-//        String message = "Hello there! How's it going " + name_text + "?\nRight now, the date is " + display;
-//
-//        ;
-//        try{
-//            Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-//            startActivity(intent);
-//            button.setText(message);
-//        }
-//        catch (ActivityNotFoundException e) {
-//            button.setText("There seems to be a problem with the picture taking function.");
-//        }
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//    }
+        return "";
     }
 }
