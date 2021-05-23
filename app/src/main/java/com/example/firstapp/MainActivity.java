@@ -137,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void open_home(View v){
         setContentView(R.layout.activity_main);
+        View linearLayout = findViewById(R.id.log_scroll);
         this.update_visual_logs();
     }
 }
