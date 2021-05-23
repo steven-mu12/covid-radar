@@ -19,8 +19,8 @@
 
     <Spinner
         android:id="@+id/range"
-        android:layout_width="235dp"
-        android:layout_height="24dp"
+        android:layout_width="129dp"
+        android:layout_height="27dp"
         android:entries="@array/bluetooth_range"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,13 +76,15 @@
         android:id="@+id/scan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Scan Devices"
         android:focusable="true"
         android:onClick="update_bluetooth_settings"
+        android:text="Get Paired Devices"
         app:layout_constraintBottom_toBottomOf="@+id/range"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/range"
-        app:layout_constraintTop_toTopOf="@+id/range" />
+        app:layout_constraintTop_toTopOf="@+id/range"
+        app:layout_constraintVertical_bias="0.541" />
 
     <Button
         android:id="@+id/select_device"
