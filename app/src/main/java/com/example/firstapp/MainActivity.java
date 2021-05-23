@@ -33,9 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
         this.update_visual_logs();
 
-
-
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -75,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         FileOutputStream fos = null;
 
         try {
-            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
+            fos = openFileOutput(FILE_NAME, MODE_APPEND);
             fos.write(text.getBytes());
 
         } catch (FileNotFoundException e) {
