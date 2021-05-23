@@ -31,15 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-        setContentView(R.layout.activity_main);
-        String now = this.load();
-        String sdf[]= now.split("\n", 200);
-
-        for (int i=0; i<sdf.length; i++){
-            add_log(sdf[i]);
-        }
-
+        this.update_visual_logs();
 
 
 
@@ -57,6 +49,17 @@ public class MainActivity extends AppCompatActivity {
         valueTV.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 
         ((LinearLayout) linearLayout).addView(valueTV);
+
+    }
+
+    public void update_visual_logs(){
+        setContentView(R.layout.activity_main);
+        String now = this.load();
+        String[] sdf = now.split("\n", 200);
+
+        for (String s : sdf) {
+            add_log(s);
+        }
 
     }
 
@@ -130,4 +133,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void open_settings(View v){
+        setContentView(R.layout.settings);
+
+    }
+
+    public void open_home(View v){
+        setContentView(R.layout.activity_main);
+        this.update_visual_logs();
+    }
 }
