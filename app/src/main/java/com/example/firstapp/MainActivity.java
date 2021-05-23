@@ -125,4 +125,9 @@ public class MainActivity extends AppCompatActivity {
         }
         return "";
     }
+    public void open_bluetooth(View v){
+        setContentView(R.layout.bluetooth);
+
+    }
+
 }
