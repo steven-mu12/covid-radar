@@ -9,7 +9,7 @@
         <item>2 Meters</item>
 
     </string-array>
-    <string-array name="bluetoothrange">
+    <string-array name="bluetooth_range">
         <item>Select Bluetooth Device</item>
 
     </string-array>
