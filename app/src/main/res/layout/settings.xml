@@ -11,18 +11,21 @@
         android:layout_height="wrap_content"
         android:text="Settings"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="36dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
 
     <Spinner
         android:id="@+id/range"
         android:layout_width="140dp"
         android:layout_height="22dp"
-        android:layout_marginBottom="428dp"
         android:entries="@array/range"
-        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton4"
-        tools:layout_editor_absoluteX="255dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/rangetext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rangetext"
+        app:layout_constraintTop_toTopOf="@+id/rangetext" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_bluetooth"
@@ -59,44 +62,59 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_dialog_info" />
 
-
     <TextView
         android:id="@+id/rangetext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="196dp"
         android:text="Detection Range:"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="182dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="124dp"
         android:text="Sound File:"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="340dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rangetext"
+        app:layout_constraintTop_toBottomOf="@+id/rangetext"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
         android:text="Selected Sound File:"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="389dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.262" />
 
     <TextView
         android:id="@+id/SoundFile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text='""'
-        tools:layout_editor_absoluteX="258dp"
-        tools:layout_editor_absoluteY="389dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="@+id/textView5" />
 
     <Button
         android:id="@+id/upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Upload"
-        tools:layout_editor_absoluteX="258dp"
-        tools:layout_editor_absoluteY="326dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
