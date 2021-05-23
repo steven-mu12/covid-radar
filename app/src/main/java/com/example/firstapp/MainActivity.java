@@ -5,12 +5,16 @@ package com.example.firstapp;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothSocket;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -88,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         FileOutputStream fos = null;
 
         try {
-            fos = openFileOutput(FILE_NAME, MODE_APPEND);
+            fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
             fos.write(text.getBytes());
 
         } catch (FileNotFoundException e) {
@@ -108,6 +112,13 @@ public class MainActivity extends AppCompatActivity {
 
         View linearLayout = findViewById(R.id.log_scroll);
 //        this.load();
+        Button button = findViewById(R.id.tester_button);
+        button.setVisibility(View.GONE);
+
+        Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+        Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+        r.play();
+
     }
 
     public String load() {

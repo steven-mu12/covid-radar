@@ -10,8 +10,8 @@
         android:id="@+id/parent_log_scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="73dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/log_scroll"
@@ -20,20 +20,20 @@
             android:orientation="vertical" />
     </ScrollView>
 
+    <!--    THE BUTTONS FOR THE BOTTOM NAVIGATION:-->
+
+
     <Button
         android:id="@+id/tester_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="save"
         android:text="Button"
-        app:layout_constraintBottom_toBottomOf="@+id/parent_log_scroll"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/parent_log_scroll"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-<!--    THE BUTTONS FOR THE BOTTOM NAVIGATION:-->
-
+        app:layout_constraintVertical_bias="0.02" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_bluetooth"
