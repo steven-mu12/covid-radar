@@ -19,13 +19,14 @@
 
     <Spinner
         android:id="@+id/range"
-        android:layout_width="140dp"
-        android:layout_height="22dp"
-        android:entries="@array/range"
+        android:layout_width="238dp"
+        android:layout_height="42dp"
+        android:entries="@array/bluetoothrange"
+        android:tag="k"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="262dp" />
+        tools:layout_editor_absoluteY="254dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_bluetooth"
