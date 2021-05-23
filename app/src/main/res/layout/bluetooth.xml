@@ -19,15 +19,15 @@
 
     <Spinner
         android:id="@+id/range"
-        android:layout_width="140dp"
-        android:layout_height="22dp"
-        android:entries="@array/range"
+        android:layout_width="235dp"
+        android:layout_height="24dp"
+        android:entries="@array/bluetooth_range"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintVertical_bias="0.372" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_bluetooth"
@@ -73,20 +73,22 @@
         tools:layout_editor_absoluteY="481dp" />
 
     <Button
-        android:id="@+id/upload"
+        android:id="@+id/scan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select Device"
+        android:text="Scan Devices"
+        android:focusable="true"
+        android:onClick="update_bluetooth_settings"
         app:layout_constraintBottom_toBottomOf="@+id/range"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/range"
         app:layout_constraintTop_toTopOf="@+id/range" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/select_device"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button Here Just In Case"
+        android:text="Select Device"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

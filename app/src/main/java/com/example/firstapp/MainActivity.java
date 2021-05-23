@@ -4,27 +4,32 @@
 package com.example.firstapp;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
-import android.app.ApplicationErrorReport;
 import android.util.Log;
 import android.view.View;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.LinearLayout;
-import android.widget.Button;
+import android.widget.Spinner;
 import android.view.ViewGroup.LayoutParams;
-
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
-
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Set;
+
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+
+
 public class MainActivity extends AppCompatActivity {
+
+    BluetoothAdapter btAdapter;
+    BluetoothDevice current_device;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -32,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         this.update_visual_logs();
+
+        btAdapter = BluetoothAdapter.getDefaultAdapter();
+        Log.d("BLUE",btAdapter.getBondedDevices().toString());
+
+
 
     }
 
@@ -128,8 +138,26 @@ public class MainActivity extends AppCompatActivity {
     public void open_bluetooth(View v){
         setContentView(R.layout.bluetooth);
 
+
+
     }
 
+    public void update_bluetooth_settings(View v){
+        Set<BluetoothDevice> a = btAdapter.getBondedDevices();
+        Spinner spinner = findViewById(R.id.range);
+        ArrayList<String> arraylist = new ArrayList<>();
+
+
+        for (BluetoothDevice device_rn: a){
+            Log.d("BLUE",device_rn.getName());
+            arraylist.add(device_rn.getName());
+        }
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arraylist);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(arrayAdapter);
+
+    }
     public void open_settings(View v){
         setContentView(R.layout.settings);
 
