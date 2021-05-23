@@ -168,4 +168,21 @@ public class MainActivity extends AppCompatActivity {
         View linearLayout = findViewById(R.id.log_scroll);
         this.update_visual_logs();
     }
+
+    public void change_device_to_connect(View v){
+
+        Spinner spinner = findViewById(R.id.range);
+        String wewant = (String) spinner.getSelectedItem();
+        Set<BluetoothDevice> a = btAdapter.getBondedDevices();
+
+        for (BluetoothDevice device_rn: a){
+            if (device_rn.getName().equals(wewant)){
+                current_device = device_rn;
+                break;
+            }
+
+        }
+
+
+    }
 }
